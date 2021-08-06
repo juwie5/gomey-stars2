@@ -1,0 +1,97 @@
+
+header{
+    width : 100%;
+    height: 60vh;
+    background-image: url("../assets/hero-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+   background-size: cover;
+   }
+   
+   .mid{
+     margin: auto;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     text-align: center;
+     margin-right: 150px;
+   }
+   
+   .mid h2{
+     color: #f2f2f2;
+   }
+   
+   nav img{
+     float: left;
+     list-style-type: none;
+     width: 100px;
+     margin: 45px;
+   }
+   
+   ul {
+     padding: 0;
+     margin: 0;
+   }
+   
+   .hero{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 350px;
+     padding-top: 105px;
+     margin: auto;
+     border-bottom: 3px solid #f2f2f2;
+   }
+    
+   
+   .hero img{
+     width: 115px;
+     padding-right: 15px;
+   }
+   
+   h2{
+     font-weight: 700;
+     font-size: 32px;
+   }
+   
+   p{
+     color: #979799;
+     font-weight: 500;
+     font-size: 18px;
+     margin-bottom: 5px;
+     margin-top: 8px;
+     letter-spacing: 2px;
+   }
+   
+   .bellow{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     margin: auto;
+     position: relative;
+   }
+   
+   .bellow >p:nth-child(2){
+     margin-top: 5px;
+   }
+   
+   input{
+     width: 700px;
+     height: 40px;
+     margin: 10px 0;
+     padding-left: 65px;
+     background-color: #E8E6E6;
+     outline: none;
+     box-sizing: border-box;
+     border: none;
+     border-radius: 3px;
+     font-weight: 400;
+     font-size: 16px;
+   }
+   
+   #search {
+     position: absolute;
+     top: 65%;
+     left: 16px;
+   }
