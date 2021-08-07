@@ -6,7 +6,7 @@
             <img src="../assets/starship-2.jpg" alt="starship-2">
             <h3>Ghost</h3>
             <p>The Ghost is a modified VCX-100 light freighter, manufacture by Corellian Engineering Copration.</p>
-            <router-link :to="`/starship/1`"><button>Read More<span class="arrow"><img src="../assets/arrow-right.svg" alt=""></span></button></router-link>
+            <router-link id="link" :to="`/starship/1`"><button>Read More<span class="arrow"><img src="../assets/arrow-right.svg" alt=""></span></button></router-link>
         </div>
         <div class="tile">
             <img src="../assets/starship-1.jpg" alt="starship-1">
@@ -39,7 +39,7 @@
             <button>Read More<span class="arrow"><img src="../assets/arrow-right.svg" alt=""></span></button>
         </div>
     </div>   
-    <div class="view"><router-link :to="{name:'Starship'}">VIEW MORE</router-link></div>
+    <div class="view" @click="getShip"><router-link :to="{name:'Starship'}">VIEW MORE</router-link></div>
          <h2 class="top">Popular Planets</h2>
       <div class=imgGrid>
         <div class="gridWrap">

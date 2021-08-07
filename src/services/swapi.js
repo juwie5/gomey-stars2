@@ -15,17 +15,17 @@ let getPlanets = (name) => {
     })
 }
 
-let getPeople = ({ name, gender }) => {
+let getPeople = ({ name, gender, birth_year }) => {
     return axios.get(`${PEOPLE_ENDPOINT}`, {
-        params: { name, gender }
+        params: { name: name, gender, birth_year }
     }).then(response =>{
         return response.data
     })
 }
 
-let getStarships = (name) => {
+let getStarships = () => {
     return axios.get(`${STARSHIP_ENPOINT}`, {
-        params: { name }
+        params: {}
     }).then(response =>{
         return response.data
     })
@@ -38,7 +38,7 @@ let getStarships = (name) => {
 // getStarships();
 
 
-export{
+export  {
     getPlanets,
     getPeople,
     getStarships
