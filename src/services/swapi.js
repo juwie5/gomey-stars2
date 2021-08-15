@@ -7,39 +7,42 @@ const PEOPLE_ENDPOINT = `${BASE_ENDPOINT}/people/`
 const STARSHIP_ENPOINT = `${BASE_ENDPOINT}/starships/`
 
 
-let getPlanets = (name) => {
+let getPlanets = () => {
     return axios.get(`${PLANETS_ENDPOINT}`, {
-        params: { name }
-    }).then(response =>{
-        return response.data
-    })
-}
-
-let getPeople = ({ name, gender, birth_year }) => {
-    return axios.get(`${PEOPLE_ENDPOINT}`, {
-        params: { name: name, gender, birth_year }
-    }).then(response =>{
-        return response.data
-    })
-}
-
-let getStarships = () => {
-    return axios.get(`${STARSHIP_ENPOINT}`, {
         params: {}
     }).then(response =>{
         return response.data
     })
 }
 
-// console.log(search(1));
+let getPeople = () => {
+    return axios.get(`${PEOPLE_ENDPOINT}`, {
+        params: {}
+    }).then(response =>{
+        return response.data
+    })
+}
 
-// getPlanets();
-// getPeople();
-// getStarships();
+let getStarships = (search) => {
+    return axios.get(`${STARSHIP_ENPOINT}`, {
+        params: {search}
+    }).then(response =>{
+        return response.data
+    })
+}
+
+// let shipFilter = (param)=> {
+//     return axios.get(`${STARSHIP_ENPOINT}/`,{
+//         params: {param}
+//     }).then(reponse =>{
+//         return reponse.data
+//     })
+// }
+
 
 
 export  {
     getPlanets,
     getPeople,
-    getStarships
+    getStarships,
 }

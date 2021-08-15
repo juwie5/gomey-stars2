@@ -1,8 +1,11 @@
 import Home from '../components/Home'
-import Person from '../components/Person'
 import Landing from '../components/Landing'
-import Starshipdets from '../components/Starshipdets'
-import Starship from '../components/Starship'
+import Person from '../components/view/Person'
+import Starship from '../components/view/Starship'
+import Planets from '../components/view/Planets'
+import Starshipdets from '../components/details/Starshipdets'
+import Planetsdets from '../components/details/Planetsdets'
+import Persondets from '../components/details/Persondets'
 import { createWebHistory, createRouter } from "vue-router";
 
 
@@ -13,27 +16,47 @@ const routes = [
     component: Home, 
     children:[{
         path: "/",
+        name: "Landing",
         component: Landing
     },
     {
-        path: "/starship",
+        path: "/starships",
         name: "Starship",
-        component: Starship
+        component: Starship,
+    },
+    {
+      path: "/persons",
+      name: "Person",
+      component: Person
+    },
+    {
+      path: "/planets",
+      name: "Planets",
+      component: Planets
     }
     ]
   },
   {
     path: "/starship/:id",
-    name: "Starshipdets",
-    component: Starshipdets
+    name: "starshipdets",
+    component: Starshipdets,
+    props: true
   },
+  {
+    path: "/planet/:id",
+    name: "planetsdets",
+    component: Planetsdets
+  },
+  {
+    path: "/person/:id",
+    name: "persondets",
+    component: Persondets
+  }
 ];
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
-  linkActiveClass: "active",
-  linkExactActiveClass: "exact-active"
+  routes
 });
 
 export default router;
