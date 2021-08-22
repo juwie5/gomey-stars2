@@ -1,25 +1,20 @@
 <template>
  <div>
-     <h2 class="top">Popular Starships</h2>
+     <h2 v-if="$route.query.q" class="top">Results for "{{$route.query.q}}"</h2>
+     <h2 v-else class="top">Popular Starships</h2>
      <div class="grid">
-         <div v-for="item in shipData" :key="item.id" class="tile">
+         <div v-for="item in shipData.results" :key="item.id" class="tile">
          <img src="../../assets/starship-5.jpg" alt="starship-5">
          <h3>Name: {{item.name}}</h3>
          <p>Model: {{item.model}}</p>
          <p> Cargo Capacity: {{item.cargo_capacity}}</p>
-          <router-link id="link" :to="{name:'starshipdets', params: {id: item.id}}"><button>More details</button></router-link> 
+         <router-link id="link" :to="{name:'starshipdets', params: {id: item.id}}"><button class="ship-link">More details</button></router-link> 
          </div> 
       </div>  
-      <div class="grid">
-          <div v-for="item in filterShip" :key="item.id" class="tile"> 
-            <img src="../../assets/starship-2.jpg" alt="starship-2">
-            <h3>Name: {{item.name}}</h3>
-            <p>Model: {{item.model}}</p>
-            <p> Cargo Capacity: {{item.cargo_capacity}}</p> 
-          </div> 
-        </div>  
-        <button @click="getFiltered">click me</button>
-         
+      <div>
+          <button :disabled="!shipData.previous" @click="goToPrevious()"><img src="../../assets/left.svg"></button>
+          <button :disabled="!shipData.next" @click="goToNext()"><img src="../../assets/right.svg"></button>
+      </div>
  </div>
 </template>
 
@@ -28,43 +23,50 @@
 import { getStarships} from "../../services/swapi"
 export default {
     name: 'Starship',
-    props:{
-        query: {
-            type: String
-        }
-    },
     data(){
         return{
-            shipData:[], 
-            filterShip:[]
+            shipData:{}, 
+            currentPage: 1,
         }
     },
     mounted(){
-        this.getShip();
-
-         //this.getFilteredShip();
+        const {q, page} = this.$route.query;
+        this.currentPage = Number.parseInt(page);
+        this.getShips(q, page);  
     },
       methods:{
-        async getShip(){
-         let r = await getStarships();
+        async getShips(query, page){
+         let r = await getStarships(query, page);
+         const {count, next, previous} = r;
          r.results.forEach((item) => {
           const urlSplit = item.url.split('/')
           item.id = urlSplit[5]
          });
-         this.shipData = r.results
+         this.shipData = r;
+         console.log(this.shipData)
         },
-        async getFiltered(){
-           let q = await getStarships(this.query);
-           this.filterShip = q.results
-           this.$emit(this.getFiltered)
-        },      
+        goToNext(){
+            this.currentPage = this.currentPage + 1;
+            this.$router.push ({query: {page: this.currentPage}});
+        },
+        goToPrevious(){
+            this.currentPage = this.currentPage - 1;
+            this.$router.push({query: {page: this.currentPage}});
+        }       
+    },
+    watch: {
+        '$route.query'(newQuery){
+            this.getShips(newQuery.q, newQuery.page);
+        }
     }
 }
 
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.ship-link{
+    top: 10px;
+}
 
 
 </style>

@@ -12,12 +12,12 @@
         <div class="bellow">
             <p>Find your favorite Characters,Films,Species </p>
             <p>Starships and Planets</p>
-            <img src="../assets/search.svg" alt="searchIcon" id="search" @click="filtered">
-          <input type="text" name="search" placeholder="Enter a Search term" v-model="query" @keyup.enter="filtered">
+            <img src="../assets/search.svg" alt="searchIcon" id="search">
+          <input type="text" name="search" placeholder="Enter a Search term" @change="addFilterQuery">
         </div>
       </div> 
     </header>
-     <router-view :query="query"></router-view>
+     <router-view></router-view>
   </div>
 </template>
 
@@ -41,9 +41,14 @@ export default {
 
   },
   methods:{
-     filtered(){
-       getFiltered()
-     }
+      addFilterQuery(event){
+        const q = event.target.value;
+        if(q){
+          this.$router.push({ query: {q}});
+        } else {
+          this.$router.push({query: {}});
+        }
+      }
   }
 }
 </script>

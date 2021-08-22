@@ -11,10 +11,10 @@ export default {
 
 <style lang="scss">
 @import "styles/variables";
-@import "styles/Globals/starship";
-@import "styles/Globals/planets";
-@import "styles/Globals/person";
-@import "styles/Globals/home"
+@import "styles/Home/starship";
+@import "styles/Home/planets";
+@import "styles/Home/person";
+@import "styles/Home/home"
 
 
 </style>
