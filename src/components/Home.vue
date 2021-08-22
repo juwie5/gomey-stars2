@@ -12,8 +12,8 @@
         <div class="bellow">
             <p>Find your favorite Characters,Films,Species </p>
             <p>Starships and Planets</p>
-            <img src="../assets/search.svg" alt="searchIcon" id="search">
-          <input type="text" name="search" placeholder="Enter a Search term" v-model="query" @keyup.enter="filterShip" >
+            <img src="../assets/search.svg" alt="searchIcon" id="search" @click="filtered">
+          <input type="text" name="search" placeholder="Enter a Search term" v-model="query" @keyup.enter="filtered">
         </div>
       </div> 
     </header>
@@ -22,13 +22,13 @@
 </template>
 
 <script>
-import Starship from '../components/view/Starship'
-import Planets from '../components/view/Planets'
-import Person from '../components/view/Person'
+import Starship from '../components/home/Starship'
+import Planets from '../components/home/Planets'
+import Person from '../components/home/Person'
+
 
 export default {
   name: 'Home',
-  // emits: ['filterShip'],
   data(){
     return{
       query:'',
@@ -41,7 +41,9 @@ export default {
 
   },
   methods:{
-     
+     filtered(){
+       getFiltered()
+     }
   }
 }
 </script>

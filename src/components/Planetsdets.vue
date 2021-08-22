@@ -2,7 +2,7 @@
     <div>
         <header>
             <div class="head"> 
-                <img src="../../assets/planet-1.jpg" alt="planet-1">
+                <img src="../assets/planet-1.jpg" alt="planet-1">
             </div>
         </header>
         <div class="shipdets">

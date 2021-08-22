@@ -2,7 +2,7 @@
     <div>
         <header>
             <div class="head"> 
-                <img src="../../assets/starship-3.jpg" alt="">
+                <img src="../assets/starship-3.jpg" alt="">
             </div>
         </header>
         <div class="shipdets">

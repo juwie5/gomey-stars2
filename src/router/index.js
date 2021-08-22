@@ -1,11 +1,11 @@
 import Home from '../components/Home'
-import Landing from '../components/Landing'
-import Person from '../components/view/Person'
-import Starship from '../components/view/Starship'
-import Planets from '../components/view/Planets'
-import Starshipdets from '../components/details/Starshipdets'
-import Planetsdets from '../components/details/Planetsdets'
-import Persondets from '../components/details/Persondets'
+import Landing from '../components/home/Landing'
+import Person from '../components/home/Person'
+import Starship from '../components/home/Starship'
+import Planets from '../components/home/Planets'
+import Starshipdets from '../components/Starshipdets'
+import Planetsdets from '../components/Planetsdets'
+import Persondets from '../components/Persondets'
 import { createWebHistory, createRouter } from "vue-router";
 
 

@@ -18,7 +18,7 @@
             <p> Cargo Capacity: {{item.cargo_capacity}}</p> 
           </div> 
         </div>  
-        <button @click="getFilteredShip">click me</button>
+        <button @click="getFiltered">click me</button>
          
  </div>
 </template>
@@ -53,9 +53,10 @@ export default {
          });
          this.shipData = r.results
         },
-        async getFilteredShip(){
+        async getFiltered(){
            let q = await getStarships(this.query);
            this.filterShip = q.results
+           this.$emit(this.getFiltered)
         },      
     }
 }

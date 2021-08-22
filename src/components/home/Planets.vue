@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Planets</h2>
+    <h2 class="top">Planets</h2>
     <div class="nets">
           <div v-for="item in planetData" :key="item.id" class="textCen"> 
             <img src="../../assets/planet-1.jpg" alt="planet-1">
