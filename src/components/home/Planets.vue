@@ -4,13 +4,18 @@
     <h2 v-else class="top">Planets</h2>
     <div class="nets">
           <div v-for="item in planetData.results" :key="item.id" class="textCen"> 
-            <img src="../../assets/planet-1.jpg" alt="planet-1">
-            <p>Name: {{item.name}}</p>
-            <p>Temperature: {{item.climate}}</p>
-            <p>population: {{item.population}}</p>
+            <img class="planet-btn" src="../../assets/planet-1.jpg" alt="planet-1">
+            <h3>Name: {{item.name}}</h3>
+            <h5>Temperature: {{item.climate}}</h5>
+            <h5>population: {{item.population}}</h5>
             <router-link id="link" :to="{name:'planetsdets', params: {id: item.id}}"><button>More details</button></router-link>
           </div>  
     </div>
+    <div class="pagin-btn">
+          <p> 1 - 10 of {{planetData.count}}</p>
+          <button :disabled="!planetData.previous" @click="goToPrevious()"><img  src="../../assets/left.svg"></button>
+          <button :disabled="!planetData.next" @click="goToNext()"><img src="../../assets/right.svg"></button>
+      </div>
   </div>   
 </template>
 
@@ -26,7 +31,7 @@ export default {
     },
     mounted(){
         const {q, page} = this.$route.query;
-        this.currentPage = Number.parseInt(page);
+        this.currentPage;
         this.getPlanet(q, page);  
     },
       methods:{
@@ -62,10 +67,9 @@ export default {
   flex-wrap: wrap;
   flex-direction: row; 
   justify-content: center;
-
 }
 
-img{
-  width: 300px;
+.planet-btn{
+  width: 200px;
 }
 </style>

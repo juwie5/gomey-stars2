@@ -43,15 +43,15 @@
          <h2 class="top">Popular Planets</h2>
       <div class=imgGrid>
         <div class="gridWrap">
-          <div class="textCen"> 
+          <div class="cen"> 
             <img src="../../assets/planet-1.jpg" alt="planet-1">
            <router-link id="link" :to="`/planet/1`"><p class="text">Corellia</p></router-link>
           </div>
-          <div class="textCen">
+          <div class="cen">
             <img src="../../assets/planet-2.jpg" alt="planet-2">
             <router-link id="link" :to="`/planet/2`"><p class="text">Ord Mantell</p></router-link>
           </div>
-          <div class="textCen">
+          <div class="cen">
             <img src="../../assets/planet-3.jpg" alt="planet-3">
               <router-link id="link" :to="`/planet/3`"><p class="text">Endor</p></router-link>
           </div>
@@ -100,3 +100,10 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.cen{
+    position: relative;
+    margin: 0 15px;
+}
+</style>

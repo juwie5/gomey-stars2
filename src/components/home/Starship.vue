@@ -11,7 +11,8 @@
          <router-link id="link" :to="{name:'starshipdets', params: {id: item.id}}"><button class="ship-link">More details</button></router-link> 
          </div> 
       </div>  
-      <div>
+      <div class="pagin-btn">
+           <p> 1 - 10 of {{shipData.count}}</p>
           <button :disabled="!shipData.previous" @click="goToPrevious()"><img src="../../assets/left.svg"></button>
           <button :disabled="!shipData.next" @click="goToNext()"><img src="../../assets/right.svg"></button>
       </div>
@@ -31,7 +32,7 @@ export default {
     },
     mounted(){
         const {q, page} = this.$route.query;
-        this.currentPage = Number.parseInt(page);
+        this.currentPage;
         this.getShips(q, page);  
     },
       methods:{
@@ -43,7 +44,6 @@ export default {
           item.id = urlSplit[5]
          });
          this.shipData = r;
-         console.log(this.shipData)
         },
         goToNext(){
             this.currentPage = this.currentPage + 1;
@@ -67,6 +67,7 @@ export default {
 .ship-link{
     top: 10px;
 }
+
 
 
 </style>
