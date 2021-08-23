@@ -2,9 +2,10 @@
      <div>
      <h2 v-if="$route.query.q" class="top">Results for "{{$route.query.q}}"</h2>
      <h2 v-else-if="selectedPerson" class="Top">Filtered {{gender.value}} Gender</h2>
-     <h2 v-else class="top">Characters</h2>  
-    <div class="select">
-            <label for="gender">FILTER</label>
+     <h2 v-else class="top">Characters</h2> 
+    <div class="pepGrid">
+        <div class="select">
+         <label for="gender">FILTER</label>
             <select name="gender" id="gender" @click="selectPerson()">
                 <option value=""></option>
                 <option value="male">Male</option>         
@@ -13,11 +14,9 @@
             </select>
              <label for="view">VIEW</label>
             <select name="gender" id="view">
-                <option value="">Grid</option>
-                <option value="">Grid</option>                 
+                <option value="">Grid</option>                
             </select>
-    </div>
-    <div class="pepGrid">
+        </div>
         <div v-for="item in personData.results" :key="item.id" class="person" v-bind:class="{box: showGrid}">
                 <img src="../../assets/character-1.jpg" alt="character-1">
                 <h3>Name: {{item.name}}</h3>
@@ -97,10 +96,9 @@ export default {
     .pepGrid{
         margin-top: 20px;
     }
-
-    .select{
-        display: inline-block;
-    }
+    // .select{
+    
+    // }
 
     a, .link-text { 
         color: #494957;
