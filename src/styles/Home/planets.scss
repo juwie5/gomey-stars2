@@ -57,4 +57,20 @@
   cursor: pointer;
   text-decoration: none;
 }
-  
+
+@media only screen and (max-width: 425px){
+  .textCen {
+    width: 150px;
+  }
+  .imgGrid img{
+    width: 100px;
+    height: 160px;
+  }
+  .text{
+    font-size: 12px;
+  }
+  .textCen h5{
+    font-size: 10px;
+  }
+
+}

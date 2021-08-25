@@ -72,4 +72,11 @@ export default {
 .planet-btn{
   width: 200px;
 }
+
+@media only screen  and (max-width: 425px){
+  .planet-btn{ 
+    width: 100px;
+  }
+
+}
 </style>
