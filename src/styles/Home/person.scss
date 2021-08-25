@@ -34,3 +34,27 @@
         font-style: italic;
         color: #98989F
     }
+
+@media only screen and (max-width: 425px){
+    .person{
+        width: 160px;
+    }
+    .person img{
+        width: 160px;
+        height: 160px;
+    }
+    .person h3{
+        margin-top: 15px;
+    }
+    .person h6 {
+        margin-left: 5px;
+    }
+    .person h5{
+        margin-left: 5px;
+        font-size: 10px;
+    }
+    .person a{
+        color: #494957,
+    }
+     
+} 

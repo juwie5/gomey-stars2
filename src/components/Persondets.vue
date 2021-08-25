@@ -41,17 +41,5 @@ export default {
 <style lang="scss" scoped>
 
 
-.head{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.head img {
-    margin-top: 70px;
-     width: 350px;
-}
-.shipdets{
-    text-align: center;
-}
 
 </style>

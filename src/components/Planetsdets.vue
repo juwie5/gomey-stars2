@@ -39,20 +39,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
-
-.head{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.head img {
-    margin-top: 30px;
-     width: 350px;
-}
-.shipdets{
-    text-align: center;
-}
-
+    @media only screen and(max-width: 425px){
+     .head img{
+            margin-top: 30px;
+         }
+    }
+        
 </style>

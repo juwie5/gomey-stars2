@@ -22,7 +22,7 @@
                 <h3>Name: {{item.name}}</h3>
                 <h5> Gender: {{item.gender}}</h5>
                 <h5>Birth Year: {{item.birth_year}}</h5>
-                <router-link class=" top link-text" :to="{name:'persondets', params: {id: item.id}}">Read More</router-link>
+                <router-link class="top link-text" :to="{name:'persondets', params: {id: item.id}}">Read More</router-link>
         </div>
          <div v-for="item in selectedPersons" :key="item.id" class="person">
             <img src="../../assets/character-3.jpg" alt="character-3">
@@ -96,9 +96,9 @@ export default {
     .pepGrid{
         margin-top: 20px;
     }
-    // .select{
-    
-    // }
+     .select{
+      padding-bottom: 10px;
+  }
 
     a, .link-text { 
         color: #494957;
@@ -108,6 +108,15 @@ export default {
     .box{
         display: none;
     } 
-    
+    @media only screen and (max-width: 425px){
+        .link-text{
+            font-size: 10px;
+            margin-left: 5px;
+        }
+        
+        .top::after{
+            display: none;
+        }
+    } 
      
 </style>

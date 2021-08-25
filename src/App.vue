@@ -14,7 +14,8 @@ export default {
 @import "styles/Home/starship";
 @import "styles/Home/planets";
 @import "styles/Home/person";
-@import "styles/Home/home"
+@import "styles/Home/home";
+@import "styles/details"
 
 
 </style>
