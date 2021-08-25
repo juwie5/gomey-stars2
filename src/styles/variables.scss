@@ -22,3 +22,13 @@ body{
     height: 30px;
     margin-left: 5px;
 }
+
+@media only screen and (max-width: 425px){
+    .pagin-btn button{
+     width: 35px;
+     height: 20px;
+    }
+    .pagin-btn img {
+        width: 10px;
+    }
+}

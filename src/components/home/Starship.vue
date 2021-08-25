@@ -68,6 +68,14 @@ export default {
     top: 10px;
 }
 
+@media only screen and (max-width: 425px){
+   .ship-link{
+       margin-bottom: 5px;
+       top: 0;
+      
+   }
+   
+}
 
 
 </style>
